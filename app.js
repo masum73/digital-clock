@@ -1,12 +1,14 @@
-let time = 0;
-const intervalID = setInterval(() => {
-    const timeField = document.getElementById('time');
-    timeField.innerText = time++;
-}, 1000)
-
+let time = 1;
+let intervalID = null;
+function startTimer () {
+    return setInterval(() => {
+        const timeField = document.getElementById('time');
+        timeField.innerText = time++;
+    }, 1000)
+}
 document.getElementById('btn-start').addEventListener('click', function () {
     console.log('btn start clicked');
-    setInterval();
+    intervalID = startTimer();
 })
 
 document.getElementById('btn-pause').addEventListener('click', function () {
